@@ -1,0 +1,8 @@
+#box {
+  list-style: none;
+  margin: 10px;
+}
+li {
+  padding: 10px;
+  font-size: 1.2rem;
+}
