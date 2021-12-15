@@ -6,6 +6,7 @@ function formatHandlebarsData(data) {
 
   return childrenObj.map((element) => ({
     title: element.data.title,
+    thumbnail: element.data.thumbnail,
   }));
 }
 
@@ -18,5 +19,11 @@ Promise.allSettled([promise]).then(([data]) => {
     var text = document.createTextNode(`${item.title}`);
     li.appendChild(text);
     document.getElementById("box").appendChild(li);
+  });
+  handlebarsData.forEach(function (item) {
+    var imgAll = document.createElement("imgAll");
+    console.log(`${item.thumbnail}`);
+    var text2 = document.createTextNode(`${item.thumbnail}`);
+    imgAll.appendChild(text2);
   });
 });
