@@ -21,9 +21,10 @@ Promise.allSettled([promise]).then(([data]) => {
     document.getElementById("box").appendChild(li);
   });
   handlebarsData.forEach((item) => {
-    let element = document.createElement("img");
+    var element = document.createElement("img");
     element.src = `${item.thumbnail}`;
-    console.log(`${item.thumbnail}`);
-    document.body.appendChild(element);
+    if (item.thumbnail !== "default") {
+      document.body.appendChild(element);
+    }
   });
 });
