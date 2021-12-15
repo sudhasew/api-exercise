@@ -6,3 +6,9 @@ li {
   padding: 10px;
   font-size: 1.2rem;
 }
+img {
+  display: flex;
+  margin: 20px auto;
+  width: 100px;
+  height: 100px;
+}

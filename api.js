@@ -1,5 +1,5 @@
 const url = "https://www.reddit.com/r/aww/.json";
-const promise = fetch(url).then((res) => res.json());
+const promise = fetch(url).then((response) => response.json());
 
 function formatHandlebarsData(data) {
   const childrenObj = data.value.data.children;
@@ -20,10 +20,10 @@ Promise.allSettled([promise]).then(([data]) => {
     li.appendChild(text);
     document.getElementById("box").appendChild(li);
   });
-  handlebarsData.forEach(function (item) {
-    var imgAll = document.createElement("imgAll");
+  handlebarsData.forEach((item) => {
+    let element = document.createElement("img");
+    element.src = `${item.thumbnail}`;
     console.log(`${item.thumbnail}`);
-    var text2 = document.createTextNode(`${item.thumbnail}`);
-    imgAll.appendChild(text2);
+    document.body.appendChild(element);
   });
 });
